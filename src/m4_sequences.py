@@ -6,7 +6,7 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
+         and Aaryan Khatri.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
@@ -135,13 +135,20 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    list =[]
+    for k in range(len(sequence) - 1):
+        if sequence[k] == sequence[k+1]:
+            list = list + [k]
+
+    return list
+
 
 
 def run_test_practice_problem4b():
@@ -205,6 +212,14 @@ def practice_problem4b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+    index = 0
+    for k in range(len(sequence)):
+        if k % 2 == 0:
+            sequence[k] > sequence[index]
+            index = k
+
+    return sequence[index]
+
 
 
 def run_test_practice_problem4c():
@@ -308,6 +323,15 @@ def practice_problem4c(points):
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
 
+    for k in range(len(points)):
+        if is_prime(points[k].x) and is_prime(points[k].y):
+            a = points[k].x
+            points[k].x = points[k].y
+            points[k].y = a
+            return points[k]
+
+    return ('Not Found')
+
 
 def run_test_practice_problem4d():
     """ Tests the    practice_problem4d    function. """
@@ -392,13 +416,20 @@ def practice_problem4d(sequence):
       :rtype: int
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    total = 0
+    for k in range(len(sequence) - 1):
+        if is_prime(sequence[k]) and is_prime(sequence[k+1]) and sequence[k] != sequence[k+1]:
+            total = total + sequence[k]
+
+    return total
+
 
 
 # -----------------------------------------------------------------------------

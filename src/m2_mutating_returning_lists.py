@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Aaryan Khatri.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -84,6 +84,18 @@ def run_test_doubler():
     # TO DO 2 (continued): Add your ADDITIONAL test(s) here:
     # -------------------------------------------------------------------------
 
+    # Test 2:
+    arg1 = [2, -3, 5, 8]
+    arg2 = [1, 6, 9]
+    correct_arg1_after = [4, -6, 10, 16]
+    correct_arg2_after = [1, 6, 9]
+    expected = [2, 12, 18]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg1)
+    print('  Argument 2 is:', arg2)
+
 
 def doubler(list1, list2):
     """
@@ -103,7 +115,7 @@ def doubler(list1, list2):
         :type list2: list of int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -112,6 +124,15 @@ def doubler(list1, list2):
     #    TIME ESTIMATE:   5 minutes.
     # -------------------------------------------------------------------------
 
+
+    for k in range(len(list1)):
+        list1[k] = list1[k] * 2
+
+    total = []
+    for j in range(len(list2)):
+        total = total + [2 * list2[j]]
+
+    return total
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
